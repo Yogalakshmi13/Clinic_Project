@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ClinicProject.Models.Patients
+@{
+    ViewData["Title"] = "AddPatient";
+}
+<html>
+<head>
+    <link href="~/css/Style1.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("/images/Dimg1.jpeg");
+        }
+    </style>
+</head>
+
+<body style="background-size:cover">
+    <div class="topnav">
+        <div style="text-align:left">
+            <a class="active" asp-action="Home" asp-controller="Home" method="post">Home</a>
+            <a class="active" asp-action="PatientView" asp-controller="Home" method="post">PatientDetails</a>
+        </div>
+    </div>
+
+    <center><h1>Patient Details</h1></center><br />
+    <hr />
+
+    <center>
+        @using (Html.BeginForm("Patient", "Home", FormMethod.Post))
+        {
+            <table>
+
+                <tr>
+                    <th>
+                        @Html.DisplayName("Patient FirstName")
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Patient_FirstName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Patient LastName")
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Patient_LastName)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Gender")
+                    </th>
+                    <td>
+                        @Html.RadioButtonFor(m => m.Gender, "Male")Male<br/>
+                        @Html.RadioButtonFor(m => m.Gender, "Female")Female<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Age")
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(m => m.Age)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Date of Birth")
+                    </th>
+                    <td>
+                        <input type="date" name="DOB" required="required" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Add" />
+                    </td>
+                </tr>
+            </table>
+            
+            
+            @*<input type="button" value="Home" onclick="location" Url("Add_Patient","Home") />*@
+        }
+
+    </center>
+</body>
+</html>

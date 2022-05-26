@@ -1,0 +1,109 @@
+﻿@*a
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*@{
+    }*@
+
+@model ClinicProject.Models.Doctor
+
+@*@{
+    ViewData["Title"] = "Add_Doctor";
+}*@
+<html>
+<head>
+    <link href="~/css/Style1.css" rel="stylesheet" />
+    <style>
+        body{
+            background-image:url("/images/Dimg1.jpeg");
+        }
+    </style>
+</head>
+
+<body style="background-size:cover">
+    <div class="topnav">
+        <div style="text-align:left">
+            <a class="active" asp-action="Home" asp-controller="Home" method="post">Home</a>
+            <a class="active" asp-action="DoctorView" asp-controller="Home" method="post">DoctorDetails</a>
+        </div>
+    </div>
+    @*<img src="~/images/Stone-Clinic-Logo.png" alt="Logoimg" align="left" height="100" width="100" />*@
+    <center><h1>Doctor Details</h1></center><br />
+    <hr />
+
+    <center>
+       
+            @using (Html.BeginForm("Doctors", "Home", FormMethod.Post))
+            {
+                <table>
+
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Doctor FirstName")<br/>
+                        </th>
+                        <td>
+                            @Html.TextBoxFor(m => m.Doctor_FirstName)<br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Doctor LastName")<br/>
+                        </th>
+                        <td>
+                            @Html.TextBoxFor(m => m.Doctor_LastName)<br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Gender")<br/>
+                        </th>
+                        <td>
+                            @Html.RadioButtonFor(m => m.Gender, "Male")Male; <br/>
+                            @Html.RadioButtonFor(m => m.Gender, "Female")Female;<br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Specialization")<br/>
+                        </th>
+                        <td>
+
+                            @*@Html.DropDownListFor(m => m.Specialization,
+                                new SelectList(Enum.GetValues(typeof(special))), "Select Specialization")*@
+                            <select name="Specialization">
+                                <option value="Select Specialzation">Select Specialzation</option>
+                                <option value="General">General</option>
+                                <option value="Internal Medicine">Internal Medicine</option>
+                                <option value="Dermotologist">Dermotologist</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Ophthalmology">Ophthalmology</option>
+                            </select>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th>
+                            @Html.DisplayName("Visiting Hours")<br/>
+                        </th>
+                        <td>
+                            @Html.RadioButtonFor(m => m.Visiting_Hours, "09.00AM - 11.00AM")09.00AM - 11.00AM<br />
+                            @Html.RadioButtonFor(m => m.Visiting_Hours, "10.00AM - 12.00PM")10.00AM - 12.00PM<br />
+                            @Html.RadioButtonFor(m => m.Visiting_Hours, "12.00PM - 02.00PM")12.00PM - 02.00PM<br />
+                            @Html.RadioButtonFor(m => m.Visiting_Hours, "03.00PM - 04.00PM")03.00PM - 04.00PM<br />
+                            @Html.RadioButtonFor(m => m.Visiting_Hours, "05.00PM - 07.00PM")05.00PM - 07.00PM<br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+                
+               
+            }
+        
+    </center>
+</body>
+</html>

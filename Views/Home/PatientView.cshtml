@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<ClinicProject.Models.Patients>
+@*@{
+        ViewData["Title"] = "Schedules";
+    }*@
+<head>
+    <link href="~/css/Style1.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("/images/Dimg1.jpeg");
+        }
+    </style>
+</head>
+
+<body style="background-size:cover">
+    <div class="topnav">
+        <div style="text-align:left">
+            <a class="active" asp-action="Home" asp-controller="Home" method="post">Home</a>
+        </div>
+    </div>
+    @using (Html.BeginForm("PatientView", "Home", FormMethod.Post))
+    { }
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("PatientId")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Patient_FirstName")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Patient_LastName")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Gender")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Age")
+                    </th>
+                    <th>
+                        @Html.DisplayName("DOB")
+                    </th>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.PatientId)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.Patient_FirstName)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.Patient_LastName)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.Age)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(modelItem => item.DOB)
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+

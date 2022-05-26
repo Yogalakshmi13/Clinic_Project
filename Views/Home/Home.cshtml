@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using (Html.BeginForm("Home", "Home", FormMethod.Post))
+{ }
+<head>
+    <link href="~/css/Style1.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-image: url("/images/Homeimg.jpeg")
+        }
+    </style>
+</head>
+
+<body style="background-size:cover">
+    <img src="~/images/Stone-Clinic-Logo.png" alt="Logoimg" align="left" height="100" width="100" /><br />
+    <center><h1> Stone Clinic</h1></center>
+    <hr />
+    <div class="topnav" style="text-align:center">
+        <a class="active" asp-action="AddDoctor" asp-controller="Home" method="Post"> AddDoctor</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="active" asp-action="AddPatient" asp-controller="Home" method="Post"> AddPatient</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="active" asp-action="AddSchedule" asp-controller="Home" method="Post"> AddSchedule</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @*<a class="active" asp-action="ScheduleAppointment" asp-controller="Home" method="Post">ScheduleAppointment</a>&nbsp;&nbsp;&nbsp;*@
+
+        <a class="active" asp-action="CancelView" asp-controller="Home" method="Post">CancelAppointment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="active" asp-action="Index" asp-controller="Home" method="Post">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <center>
+        
+            
+                <b>
+                    To Ensure good health: Eat Lightly, Breathe Deeply, Live Moderately,
+                    Cultivate Cheerfulness, and maintain an interest in Life
+                </b>
+            
+    </center>
+</body>
+

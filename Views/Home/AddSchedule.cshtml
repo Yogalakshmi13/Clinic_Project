@@ -1,0 +1,95 @@
+﻿@model ClinicProject.Models.Schedules
+@*@{
+        ViewData["Title"] = "Schedule";
+    }*@
+
+@using (Html.BeginForm("Schedule", "Home", FormMethod.Post))
+{
+<head>
+    <link href="~/css/Style1.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url("/images/Dimg1.jpeg");
+        }
+    </style>
+</head>
+
+    <body style="background-size:cover">
+        <div class="topnav">
+            <div style="text-align:left">
+                <a class="active" asp-action="Home" asp-controller="Home" method="post">Home</a>
+                @*<a class="active" asp-action="ScheduleAppointment" asp-controller="Home" method="post">Home</a>*@
+            </div>
+            </div>
+        <center><h1>Schedule Details</h1></center><br />
+        <hr />
+
+        <center>
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayName("Patientid")
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.PatientId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("Specialization")
+                </td>
+                <td>
+                    <select name="Specialization">
+                        <option value="Select Specialzation">Select Specialzation</option>
+                        <option value="General">General</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Dermotologist">Dermotologist</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("Doctor")
+                </td>
+                <td>
+                    <select name="Doctor">
+                        <option value="DoctorName">DoctorName</option>
+                        <option value="Saravana Kumar C">Saravana Kumar C</option>
+                        <option value="Devi Priya">Devi Priya </option>
+                        <option value="Anbu Selvan">Anbu Selvan</option>
+                        <option value="Dhana Lakshmi">Dhana Lakshmi</option>
+                        <option value="Hari Krishna">Hari Krishna</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("VisitDate")
+                </td>
+                <td>
+                    <input type="date" name="VisitDate" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayName("AppointmentTime")
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.AppointmentTime)
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Add" /></td>
+                @*<td><input type="button" value="Home" onclick="location" Url("schedules","Home") /></td>*@
+            </tr>
+        </table>
+</center>
+    </body>
+}
+
+

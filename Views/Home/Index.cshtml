@@ -1,0 +1,53 @@
+﻿@*@{
+    ViewData["Title"] = "Home Page";
+}*@
+
+@model ClinicProject.Models.LoginDetails
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("Validate", "Home", FormMethod.Post))
+{
+    <head>
+        <style>
+            body {
+                background-image: url("/images/Loginnimg.jpeg");
+            }
+        </style>
+    </head>
+    <body style="background-size:cover">
+        <img src="~/images/Stone-Clinic-Logo.png" alt="Logoimg" align="left" height="100" width="100" />
+        <center><h1> Stone Clinic</h1></center><br />
+        <center><h3>Login</h3></center><br />
+        <hr />
+        <center>
+            <table>
+
+                <tr>
+                    <td>
+                        UserName
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.UserName)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        @Html.PasswordFor(m => m.UserPassword)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Login"  align="center" /></td>
+                </tr>
+            </table>
+        </center>
+    </body>
+
+}
